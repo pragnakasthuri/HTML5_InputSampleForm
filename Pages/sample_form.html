@@ -87,6 +87,17 @@
                 telError.textContent = "Phone number is incorrect";
             }
         });
+
+        const pwd = document.querrySelector('#pwd');
+        const pwdError = document.querrySelector('.pwd-error');
+        pwd.addEventListener('blur', function () {
+            let pwdRegex = RegExp('"^[a-zA-Z]{8,}"');
+            if (pwdRegex.test(pwd.value)) {
+                pwdError.textContent = "";
+            } else {
+                pwdError.textContent = "Incorrect password, Password should contain minimum 8 Characters";
+            }
+        });
         
         const salary = document.querySelector('#salary');
         const output = document.querySelector('.salary-output');
@@ -94,6 +105,7 @@
         salary.addEventListener('input', function () {
             output.textContent = salary.value;
         })
+
     </script>
 </body>
 
